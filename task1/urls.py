@@ -1,7 +1,10 @@
 from django.urls import path
 
-from .views import Home
+from .views import home, post_single
+
+app_name = "task1"
 
 urlpatterns = [
-    path("", Home.as_view(), name="home"),
+    path("", home, name="home"),
+    path("single/<slug:post_slug>", post_single, name="post_single"),
 ]
